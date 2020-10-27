@@ -1,0 +1,21 @@
+const messages = [];
+
+const id = 0;
+
+module.exports = {
+    create: (res, req) => {
+        const {text, time} = req.body;
+        messages.push({id, text, time});
+        id++;
+        res.status(200).send(messages)
+    },
+    read: (res, req) => {
+        res.status(200).send(messages)
+    },
+    update: (res, req) => {
+        res.status(200).send(messages)
+    },
+    delete: (res, req) => {
+        res.status(200).send(messages)
+    },
+}
