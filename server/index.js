@@ -3,12 +3,13 @@ const app = express();
 
 const mc = require('./controllers/messages_controller')
 app.use(express.json())
+app.use(express.static(_dirname + '/../public/build'))
 
 //ENDPOINTS
-app.get();
-app.post();
-app.put();
-app.delete();
+app.get('/api/messages', mc.read);
+app.post('/api/messages', mc.create);
+app.put('/api/messages/:id', mc.update);
+app.delete('/api/messages/:id', mc.delete);
 
 
 
